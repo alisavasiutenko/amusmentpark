@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amusement Park</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- HUD overlay -->
+  <div id="hud" style="display:block;">
+
+    <div id="hud-controls">
+      <button id="mode-toggle-btn">🌎 Orbit</button>
+      <span class="orbit-hint" style="display:none;">🖱 Drag: Orbit</span>
+      <span class="walk-hint">🖱 Look / WASD: Move</span>
+      <span class="orbit-hint" style="display:none;">🖱 Scroll: Zoom</span>
+      <span>🎡 Click Rides</span>
+    </div>
+  </div>
+
+  <!-- Mobile Joystick -->
+  <div id="joystick-zone" style="display:none;">
+    <div id="joystick-base">
+      <div id="joystick-stick"></div>
+    </div>
+  </div>
+  
+  <div id="crosshair" style="display:none;">+</div>
+
+  <!-- Ride info popup -->
+  <div id="ride-popup" style="display:none;">
+    <div id="ride-popup-title"></div>
+    <div id="ride-popup-desc"></div>
+    <div id="ride-popup-btn-row">
+      <button id="ride-action-btn">RIDE!</button>
+      <button id="ride-close-btn">✕</button>
+    </div>
+  </div>
+
+  <!-- Rollercoaster ride screen -->
+  <div id="coaster-screen" style="display:none;">
+    <canvas id="coaster-canvas"></canvas>
+    <div id="coaster-overlay">
+      <div id="coaster-speed">SPEED: <span id="speed-val">0</span> km/h</div>
+      <div id="coaster-exit-btn" onclick="exitCoaster()">EXIT RIDE</div>
+    </div>
+  </div>
+
+  <!-- THREE.js scene -->
+  <canvas id="main-canvas"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="scene.js"></script>
+</body>
+</html>
